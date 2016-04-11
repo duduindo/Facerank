@@ -12,7 +12,7 @@ var sourcemaps      = require('gulp-sourcemaps');
 
 gulp.task('jsx', function () {
   browserify({
-    entries: './resources/assets/js/app.jsx',
+    entries: './resources/assets/js/main.jsx',
     extensions: ['.jsx'],
     debug: true
   })
