@@ -10,6 +10,7 @@ import { Router, Route, Link, IndexRoute, hashHistory } from 'react-router';
 const Message = (props) =>
   <div><h1>{props.params.message || 'Olá'}</h1><Links /> </div>
 
+/* Teste */
 const Links = (props) =>
   <nav>
     <Link to="/" >Olá</Link> &nbsp;
