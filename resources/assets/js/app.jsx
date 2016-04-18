@@ -1,32 +1,26 @@
 /*
-*  @
+*  @Rotas
 *
 */
 
 import React  from 'react';
 import { Router, Route, Link, IndexRoute, hashHistory } from 'react-router';
 
+//Componets custom
+import NavDefault from './navigation/default.jsx';
 
-const Message = (props) =>
-  <div><h1>{props.params.message || 'Olá'}</h1><Links /> </div>
-
-/* Teste */
-const Links = (props) =>
-  <nav>
-    <Link to="/" >Olá</Link> &nbsp;
-    <Link to="/Hi" >Hi</Link> &nbsp;
-    <Link to="/Yo" >Yo</Link> &nbsp;
-  </nav>
 
 class App extends React.Component {
   render() {
-    return (
-      <Router history={ hashHistory }>
-        <Route path="/(:message)" component={Message}></Route>
+    return(
+      <Router history={hashHistory}>
+        <Route path="/" component={NavDefault}></Route>
       </Router>
     );
   }
 }
+
+
 
 export default App;
 
