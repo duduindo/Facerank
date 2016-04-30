@@ -4,18 +4,9 @@
 */
 
 import React from 'react';
-import { Router, Route, Link, hashHistory } from 'react-router';
+import { Link } from 'react-router';
 import { Layout, Drawer, Navigation, Content, Header, HeaderRow, Textfield } from 'react-mdl';
 
-const Links = () =>
-  <Navigation>
-    <Link to="/">Fulano</Link>
-    <Link to="/perfil">Perfil</Link>
-    <Link to="/ranking">Ranking</Link>
-    <Link to="/preferencias">Preferências</Link>
-    <Link to="/procurar">Procurar</Link>
-    <Link to="/configuracoes">Configurações</Link>
-  </Navigation>
 
 
 const Style = {
@@ -24,22 +15,31 @@ const Style = {
 }
 
 class NavDefault extends React.Component {
+
+  static propTypes = {
+    children: React.PropTypes.object
+  }
+
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return(
       <div style={Style}>
         <Layout fixedHeader>
-            <Header title="&nbsp;"></Header>
+            <Header title="Teste"></Header>
             <Drawer title="Menu">
-              <Router history={ hashHistory } >
-                <Route path="/" component={Links}></Route>
-                <Route path="/perfil" component={Links}></Route>
-                <Route path="/ranking" component={Links}></Route>
-                <Route path="/preferencias" component={Links}></Route>
-                <Route path="/procurar" component={Links}></Route>
-                <Route path="/configuracoes" component={Links}></Route>
-              </Router>
+              <Navigation>
+                <Link to="/">Fulano</Link>
+                <Link to="/perfil">Perfil</Link>
+                <Link to="/ranking">Ranking</Link>
+                <Link to="/preferencias">Preferências</Link>
+                <Link to="/procurar">Procurar</Link>
+                <Link to="/configuracoes">Configurações</Link>
+              </Navigation>
             </Drawer>
-            <Content />
+            {this.props.children}
         </Layout>
       </div>
     );
