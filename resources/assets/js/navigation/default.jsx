@@ -5,14 +5,12 @@
 
 import React from 'react';
 import { Link } from 'react-router';
-import { Layout, Drawer, Navigation, Content, Header, HeaderRow, Textfield } from 'react-mdl';
-
-
+import { Layout, Drawer, Navigation, Header } from 'react-mdl';
 
 const Style = {
-  height: `${window.screen.height}px`,
+  height: `${ window.screen.height }px`,
   position: 'relative'
-}
+};
 
 class NavDefault extends React.Component {
 
@@ -22,13 +20,14 @@ class NavDefault extends React.Component {
 
   constructor(props) {
     super(props);
+    console.log(this.props.children)
   }
 
   render() {
     return(
       <div style={Style}>
         <Layout fixedHeader>
-            <Header title="Teste"></Header>
+            <Header title="Teste"/>
             <Drawer title="Menu">
               <Navigation>
                 <Link to="/">Fulano</Link>

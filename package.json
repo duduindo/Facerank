@@ -5,12 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp",
-<<<<<<< HEAD
-    "server": "http-server ./dist/facerank/www/ -p 8000"
-=======
-    "server": "http-server ./dist/facerank/www"
->>>>>>> c8545b6e4b5c52707ed6cd423c2745009f1809cf
+    "start": "gulp"
   },
   "repository": {
     "type": "git",
@@ -53,7 +48,7 @@
     "live-server": "^1.0.0",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
-    "react-mdl": "^1.5.3",
+    "react-mdl": "^1.5.4",
     "react-router": "^2.1.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"

@@ -3,54 +3,91 @@
 *
 */
 import React from 'react';
-import { Content, DataTable, TableHeader, Tabs, Tab, Slider } from 'react-mdl';
+import { Content, DataTable, TableHeader, Slider, Radio, Button, Icon } from 'react-mdl';
 
+/* Style */
 const StyleTable = {
   width: '100%'
-}
+};
+
+const StyleLabelKm = {
+  float: 'right'
+};
+
+const StyleButtonLocal = {
+  top: '15px',
+  left: '20px'
+};
+
 
 class Preferencias extends React.Component {
 
   constructor(props) {
     super(props);
+    this.changeSlider = this.changeSlider.bind(this);
+
     this.state = {
-      activeTab: 0,
-      distancia: 10
+      distancia: 10,
+      local: "Brasil"
     };
+  }
+
+  changeSlider(event) {
+    const el = event.target;
+
+    this.setState({
+      distancia: el.value
+    });
   }
 
   render() {
     return(
-      <Content>
-        <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
-            <Tab>Mostrar</Tab>
-            <Tab>Distância</Tab>
-            <Tab>Locais</Tab>
-        </Tabs>
+      <Content id="ComponentPreferencias">
         <section>
-            {(() => {
-              switch( this.state.activeTab ) {
-                case 0: {
-                  return <DataTable
-                    selectable
-                    style={StyleTable}
-                    shadow={0}
-                    rowKeyColumn="id"
-                    rows={[
-                        {id: 1001, sexo: 'Mulheres'},
-                        {id: 1002, sexo: 'Homens'}
-                    ]}>
-                      <TableHeader name="sexo" tooltip="Qual é a sua preferência?">Mostrar</TableHeader>
-                  </DataTable>
-                };
+          <article>
+            <h6>Mostrar:</h6>
+            <DataTable
+              selectable
+              style={StyleTable}
+              shadow={0}
+              rowKeyColumn="id"
+              rows={[
+                  {id: 1001, sexo: 'Mulheres'},
+                  {id: 1002, sexo: 'Homens'}
+              ]}>
+              <TableHeader name="sexo" tooltip="Qual é a sua preferência?">Selecionar tudo</TableHeader>
+            </DataTable>
+          </article>
 
-                case 1: {
-                  return <div>
-                    <Slider min={1} max={100} defaultValue={10} onChange={(value) => this.setState({distancia: value})} />
-                  </div>
-                };
-              }
-            })()}
+          <article>
+            <Radio
+              value="distancia"
+              name="sorteio"
+              ripple
+            > Sorteio por distância</Radio>
+
+            <span style={StyleLabelKm} >{this.state.distancia}km</span>
+
+            <Slider
+              min={1}
+              max={100}
+              defaultValue={10}
+              onChange={this.changeSlider}
+            />
+
+          </article>
+
+          <article>
+            <Radio
+              value="local"
+              name="sorteio"
+              ripple
+            > Sorteio por locais:</Radio>
+
+            <div>
+              <Button style={StyleButtonLocal} raised ripple> <Icon name="mode_edit" /> {this.state.local} </Button>
+            </div>
+          </article>
         </section>
       </Content>
     );

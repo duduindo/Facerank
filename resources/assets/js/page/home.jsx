@@ -3,9 +3,7 @@
 *
 */
 import React from 'react';
-import { Layout, Drawer, Navigation, Content, Header, HeaderRow, Textfield } from 'react-mdl';
-
-
+import { Content } from 'react-mdl';
 
 
 class Home extends React.Component {
