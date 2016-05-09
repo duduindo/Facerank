@@ -15,12 +15,11 @@ const Style = {
 class NavDefault extends React.Component {
 
   static propTypes = {
-    children: React.PropTypes.object
+    children: React.PropTypes.object.isRequired
   }
 
   constructor(props) {
     super(props);
-    console.log(this.props.children)
   }
 
   render() {

@@ -12,6 +12,8 @@ import Home               from './page/home.jsx';
 import Preferencias       from './page/preferencias.jsx';
 import Configuracoes      from './page/configuracoes.jsx';
 import Procurar           from './page/procurar.jsx';
+import Ranking            from './page/ranking.jsx';
+import Perfil            from './page/perfil.jsx';
 
 
 class App extends React.Component {
@@ -23,6 +25,8 @@ class App extends React.Component {
           <Route path="/preferencias" component={Preferencias} />
           <Route path="/configuracoes" component={Configuracoes} />
           <Route path="/procurar" component={Procurar} />
+          <Route path="/ranking" component={Ranking} />
+          <Route path="/perfil" component={Perfil} />
         </Route>
       </Router>
     );
