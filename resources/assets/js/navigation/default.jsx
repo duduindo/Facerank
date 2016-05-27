@@ -8,7 +8,7 @@ import { Link } from 'react-router';
 import { Layout, Drawer, Navigation, Header } from 'react-mdl';
 
 const Style = {
-  height: `${ window.screen.height }px`,
+  height: `${ window.innerHeight }px`,
   position: 'relative'
 };
 
@@ -29,7 +29,7 @@ class NavDefault extends React.Component {
             <Header title="Teste"/>
             <Drawer title="Menu">
               <Navigation>
-                <Link to="/">Fulano</Link>
+                <Link to="/">Home</Link>
                 <Link to="/perfil">Perfil</Link>
                 <Link to="/ranking">Ranking</Link>
                 <Link to="/preferencias">Preferências</Link>
@@ -45,4 +45,3 @@ class NavDefault extends React.Component {
 }
 
 export default NavDefault;
-

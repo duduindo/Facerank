@@ -1,1 +1,70 @@
-"" 
+#escolhendo
+  font-size 0px
+  position relative
+  width 100%
+
+  article
+    font-size 12px
+    position absolute
+    width 100%
+
+/**
+  Combo imagens
+**/
+.escolhendo-imagens
+  background-color tomato
+  display inline-block
+
+  .escolhendo-imagem
+    background-color yellow
+    height 90%
+    position absolute
+    right 1%
+    top 5%
+    width 90%
+    z-index 1
+    -webkit-transition top .25s cubic-bezier(0.67, -0.6, 0, 1.68)
+    transition top .25s cubic-bezier(0.67, -0.6, 0, 1.68)
+
+    &.escolhendo-imagem__active
+      height 80%
+      left 1%
+      top 1%
+      width 80%
+      z-index 2
+
+  .escolhendo-camadas
+    background-color black
+    height 100%
+    position relative
+    width 100%
+
+    .escolhendo-camada
+      -webkit-align-items center
+      align-items center
+      display -webkit-flex
+      display flex
+      -webkit-justify-content center
+      justify-content center
+      height 100%
+      left 0
+      overflow hidden
+      position absolute
+      top 0
+      width 100%
+
+      img
+        max-width 100%
+
+      &.escolhendo-camada-informacoes
+        background-color rgba(0, 0, 0, .2);
+        z-index 2
+
+/**
+  Controle. Botoẽos
+**/
+.escolhendo-botoes
+  background-color green
+  bottom 0
+  display inline-block
+  height 60px

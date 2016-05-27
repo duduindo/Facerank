@@ -13,7 +13,7 @@ import Preferencias       from './page/preferencias.jsx';
 import Configuracoes      from './page/configuracoes.jsx';
 import Procurar           from './page/procurar.jsx';
 import Ranking            from './page/ranking.jsx';
-import Perfil            from './page/perfil.jsx';
+import Perfil             from './page/perfil.jsx';
 
 
 class App extends React.Component {
@@ -34,4 +34,3 @@ class App extends React.Component {
 }
 
 export default App;
-
