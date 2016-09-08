@@ -2,7 +2,8 @@
 *  @Prefencias
 *
 */
-import React from 'react';
+import React    from 'react';
+import { Link } from "react-router";
 import { Content, DataTable, TableHeader, Slider, Radio, Button, Icon } from 'react-mdl';
 
 /* Style */
@@ -24,7 +25,7 @@ class Preferencias extends React.Component {
 
   constructor(props) {
     super(props);
-    this.changeSlider = this.changeSlider.bind(this);
+    this.changeSlider       = this.changeSlider.bind(this);
 
     this.state = {
       distancia: 10,
@@ -85,7 +86,7 @@ class Preferencias extends React.Component {
             > Sorteio por locais:</Radio>
 
             <div>
-              <Button style={StyleButtonLocal} raised ripple> <Icon name="mode_edit" /> {this.state.local} </Button>
+              <Button style={StyleButtonLocal} raised ripple onClick={() => { location.href="#/procurarLocais" }}> <Icon name="mode_edit" /> {this.state.local} </Button>
             </div>
           </article>
         </section>

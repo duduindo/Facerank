@@ -10,6 +10,7 @@ import stylus           from 'gulp-stylus';
 import rename           from 'gulp-rename';
 import sourcemaps       from 'gulp-sourcemaps';
 import liveServer       from 'live-server';
+import jeey             from 'jeet';
 
 const paramsLiveServer = {
   port: 8000,
@@ -58,6 +59,7 @@ gulp.task('compilecss', () => {
     .src(['./resources/assets/css/_app.styl'])
     .pipe(sourcemaps.init())
     .pipe(stylus({
+      paths : ['node_modules/jeet/stylus'],
       compress: false
     }))
     .pipe(sourcemaps.write())
